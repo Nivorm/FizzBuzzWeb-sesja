@@ -4,26 +4,28 @@ using FizzBuzzWeb.Models;
 
 namespace FizzBuzzWeb.Models
 {
-    public class FizzBuzz
+    public class FormDataHolder
     {
         [Display(Name = "Podaj rok urodzenia")]		
         [Required]
 		[Range(1899, 2022, ErrorMessage = "Oczekiwano wartość z zakresu 1899-2022.")]
+        [LeapYear(firstVar : 4, secondVar : 100, thirdVar : 400)]
         public int? Number { get; set; }
 		
+        [Required]
 		[Display(Name = "Podaj imie")]
+        [StringLength(maximumLength:40, ErrorMessage = "Wpisano zbyt długie imię")]
 		public string? Firstname { get; set; }
-        public string numeric()
+        public bool numeric()
         {
-            if(Number == null)
+            if(Number!= null)
             {
-				return "";
+				return true;
             }
-            if (this.Number % 100 != 0 && this.Number % 4 == 0 || this.Number%400==0)
+            else
             {
-                return "przestępny";
+			    return false;
             }
-            return "nieprzestępny";
         }
     }
 }
