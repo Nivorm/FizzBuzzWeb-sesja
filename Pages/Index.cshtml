@@ -6,19 +6,19 @@
 
 <div class="text-center">
     <h1 class="display-4">Cześć @Model.Name</h1>
-    <div class="container col-4 my-4">
+    <div class="border border-secondary container col-4 my-4 bg-info bg-gradient p-3 rounded-1">
         <form method="post" class="form-inline">
             <div class="form-group">
                 <label asp-for="FormDataHolder.Number"></label><br>
-                <input asp-for="FormDataHolder.Number" class="form-control" />
+                <input asp-for="FormDataHolder.Number" class="form-control border border-secondary" />
             </div>
             <div class="form-group">
                 <label asp-for="FormDataHolder.Firstname"></label><br>
-                <input asp-for="FormDataHolder.Firstname" class="form-control" />
+                <input asp-for="FormDataHolder.Firstname" class="form-control border border-secondary" />
             </div>
-            <button type="submit" class="btn btn-primary my-2">Zatwierdź</button><br><br>         
-            <span asp-validation-for="FormDataHolder.Number" class="text-success"></span><br>
-            <span asp-validation-for="FormDataHolder.Firstname" class="text-success"></span>
+            <button type="submit" class="btn btn-primary border border-secondary my-2">Zatwierdź</button> 
         </form>
     </div>
+    <span asp-validation-for="FormDataHolder.Number" class="text-danger font-weight-bold"></span><br>
+    <span asp-validation-for="FormDataHolder.Firstname" class="text-danger font-weight-bold"></span>
 </div>
