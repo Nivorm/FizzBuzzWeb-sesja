@@ -4,21 +4,21 @@
     ViewData["Title"] = "Home page";
 }
 
-<div class="text-left">
+<div class="text-center">
     <h1 class="display-4">Cześć @Model.Name</h1>
-    <div class="container">
+    <div class="container col-4 my-4">
         <form method="post" class="form-inline">
             <div class="form-group">
-                <label asp-for="FizzBuzz.Number"></label><br>
-                <input asp-for="FizzBuzz.Number" class="form-control" />
+                <label asp-for="FormDataHolder.Number"></label><br>
+                <input asp-for="FormDataHolder.Number" class="form-control" />
             </div>
             <div class="form-group">
-                <label asp-for="FizzBuzz.Firstname"></label><br>
-                <input asp-for="FizzBuzz.Firstname" class="form-control" />
+                <label asp-for="FormDataHolder.Firstname"></label><br>
+                <input asp-for="FormDataHolder.Firstname" class="form-control" />
             </div>
             <button type="submit" class="btn btn-primary my-2">Zatwierdź</button><br><br>         
-            <span asp-validation-for="FizzBuzz.Number" class="text-success"></span><br>
-            <span asp-validation-for="FizzBuzz.Firstname" class="text-success"></span>
+            <span asp-validation-for="FormDataHolder.Number" class="text-success"></span><br>
+            <span asp-validation-for="FormDataHolder.Firstname" class="text-success"></span>
         </form>
     </div>
 </div>

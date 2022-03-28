@@ -8,13 +8,13 @@ namespace FizzBuzzWeb.Pages
 {
     public class SavedInSessionModel : PageModel
     {
-        public FizzBuzz FizzBuzz { get; set; }
+        public FormDataHolder FormDataHolder { get; set; }
         public void OnGet()
         {
             var Data = HttpContext.Session.GetString("Data");
             if (Data != null)
             {
-                FizzBuzz = JsonConvert.DeserializeObject<FizzBuzz>(Data);
+                FormDataHolder = JsonConvert.DeserializeObject<FormDataHolder>(Data);
             }
         }
     }
