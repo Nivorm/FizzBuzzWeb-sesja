@@ -6,20 +6,24 @@ namespace FizzBuzzWeb.Models
 {
     public class FizzBuzz
     {
-        [Display(Name = "Twój szczęśliwy numerek")]
+        [Display(Name = "Podaj rok urodzenia")]		
         [Required]
-		[Range(1, 1000, ErrorMessage = "Oczekiwana wartość {0} z zakresu {1} i {2}.")]
-		[NumberValidation(firstVar : 3, secondVar : 5)]
+		[Range(1899, 2022, ErrorMessage = "Oczekiwano wartość z zakresu 1899-2022.")]
         public int? Number { get; set; }
-        public bool numeric()
+		
+		[Display(Name = "Podaj imie")]
+		public string? Firstname { get; set; }
+        public string numeric()
         {
-            if(Number!= null)
+            if(Number == null)
             {
-				return true;
+				return "";
             }
-            else{
-			    return false;
+            if (this.Number % 100 != 0 && this.Number % 4 == 0 || this.Number%400==0)
+            {
+                return "przestępny";
             }
+            return "nieprzestępny";
         }
     }
 }

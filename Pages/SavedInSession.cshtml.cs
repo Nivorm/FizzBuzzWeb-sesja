@@ -6,7 +6,7 @@ using Newtonsoft.Json;
 
 namespace FizzBuzzWeb.Pages
 {
-        public class SavedInSessionModel : PageModel
+    public class SavedInSessionModel : PageModel
     {
         public FizzBuzz FizzBuzz { get; set; }
         public void OnGet()
